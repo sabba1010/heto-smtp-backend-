@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
 });
 
 // Explicitly handle OPTIONS preflight for Vercel
-app.options("*", cors());
+app.options(/.*/, cors());
 
 // API endpoint to send email
 app.post("/api/send-email", upload.single("cv"), async (req, res) => {
